@@ -1,11 +1,7 @@
 
     Student Data Analysis
     Loading the CSV dataset
-Displaying head, info, and description
-Counting survivors
-Calculating survival percentages
-Showing survival counts by sex
-Correlation analysis .
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
