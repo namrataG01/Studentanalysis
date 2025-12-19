@@ -1,113 +1,138 @@
 
-Project Overview
+# Student Performance Data Analysis 📚📊
 
-This project focuses on exploratory data analysis (EDA) of a student-related dataset to understand patterns, trends, and key factors affecting student performance. The analysis is performed using Python in a Jupyter Notebook.
+## 📌 Dataset Description
 
-The goal of this project is to demonstrate data analysis skills such as data cleaning, visualization, and insight generation, which are essential for a Data Analyst role.
+The dataset file is **`student_data.csv`** and is used to analyze **student performance and related factors** using exploratory data analysis (EDA). The dataset contains student-related attributes such as scores, demographics, and academic details.
 
-🛠️ Tools & Technologies Used
+---
 
-Python
+## 📊 Columns Information
 
-Jupyter Notebook
+*(Column names may vary slightly based on dataset)*
 
-Pandas – data manipulation
+* **Student_ID (int)**: Unique identifier for each student
+* **Gender (object)**: Male / Female
+* **Age (int)**: Age of the student
+* **Subject (object)**: Subject name
+* **Score (float)**: Marks obtained by the student
+* **Attendance (float)**: Attendance percentage
 
-NumPy – numerical operations
+---
 
-Matplotlib – data visualization
+## 🔍 Data Exploration Steps
 
-Seaborn – statistical visualizations
+### 1️⃣ Loading the Dataset
 
-📂 Project Files
+```python
+import pandas as pd
 
-studentanalysis.ipynb – Main notebook containing complete analysis
+df = pd.read_csv("/content/student_data.csv")
+```
 
-README.md – Project documentation
+---
 
-🔍 Steps Performed in Analysis
-1️⃣ Data Loading
+### 2️⃣ Initial Data Exploration
 
-Imported dataset into Pandas DataFrame
+```python
+df.head()      # Shows first 5 rows
+df.info()      # Column info, data types, non-null counts
+df.shape       # Dataset dimensions
+df.describe()  # Summary statistics
+df.index       # Index details
+df.columns     # Column names
+df.dtypes      # Data types
+```
 
-Checked dataset shape and structure
+---
 
-2️⃣ Data Understanding
+### 3️⃣ Uniqueness and Counts
 
-Used .info() and .describe()
+```python
+df['Column'].unique()   # Unique values in a column
+df.nunique()           # Unique value count per column
+df.count()             # Non-null values
+```
 
-Identified data types and missing values
+#### Example: Gender Count
 
-3️⃣ Data Cleaning
+```python
+df['Gender'].value_counts()
+```
 
-Handled missing values
+---
 
-Removed or treated outliers (if any)
+### 4️⃣ Query Examples
 
-Corrected data types
+#### Students scoring more than 80
 
-4️⃣ Exploratory Data Analysis (EDA)
+```python
+df[df['Score'] > 80]
+```
 
-Distribution of student scores
+#### Average score by gender
 
-Comparison based on gender / category (if available)
+```python
+df.groupby('Gender')['Score'].mean()
+```
 
-Subject-wise performance analysis
+#### Check null values
 
-Correlation analysis
+```python
+df.isnull().sum()
+```
 
-5️⃣ Data Visualization
+➡️ Dataset contains **no missing values**.
 
-Bar charts
+#### Rename a column
 
-Line charts
+```python
+df.rename(columns={'Attendance': 'attendance_percent'})
+```
 
-Histograms
+📌 *Use `inplace=True` to update the original DataFrame.*
 
-Box plots
+---
 
-Correlation heatmap
+### 5️⃣ Basic Statistics
 
-📈 Key Insights
+#### Mean Student Score
 
-Identified factors impacting student performance
+```python
+df['Score'].mean()
+```
 
-Observed score distribution trends
+#### Standard Deviation of Scores
 
-Found relationships between different variables
+```python
+df['Score'].std()
+```
 
-(Exact insights depend on dataset and are explained inside the notebook.)
+---
 
-🎯 Skills Demonstrated
+## 🛠️ Requirements
 
-Data Cleaning & Preprocessing
+* **Python 3.x**
+* **pandas**
+* **numpy**
 
-Exploratory Data Analysis (EDA)
+---
 
-Data Visualization
+## 🎯 Skills Demonstrated
 
-Analytical Thinking
+* Data Cleaning & Inspection
+* Exploratory Data Analysis (EDA)
+* GroupBy Operations
+* Statistical Analysis
 
-Python for Data Analysis
+---
 
-🚀 How to Run This Project
+## 👩‍💻 Author
 
-Clone or download the repository
-
-Open studentanalysis.ipynb in Jupyter Notebook / Google Colab
-
-Run cells sequentially
-
-📌 Future Improvements
-
-Add predictive modeling
-
-Perform feature engineering
-
-Build a dashboard using Power BI / Tableau
-
-👩‍💻 Author
-
-Namrata Gupta
+**Namrata Gupta**
 Aspiring Data Analyst
+
+---
+
+⭐ *This project is suitable for GitHub portfolio and resume showcase.*
 
