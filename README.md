@@ -134,5 +134,4 @@ Aspiring Data Analyst
 
 ---
 
-⭐ *This project is suitable for GitHub portfolio and resume showcase.*
 
